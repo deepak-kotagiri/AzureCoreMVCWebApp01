@@ -5,14 +5,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AzureCoreWebMVC.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace AzureCoreWebMVC.Controllers
 {
     public class HomeController : Controller
     {
+        public IConfiguration configuration;
+        public HomeController(IConfiguration _configuration)
+        {
+            configuration = _configuration;
+
+        }
         public IActionResult Index()
         {
-            return View();
+            var model = configuration["Greeting"];
+            return View("Index", model);
         }
 
         public IActionResult About()
