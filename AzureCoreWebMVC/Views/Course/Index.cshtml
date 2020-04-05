@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Course>;
+
+@foreach (var course in Model)
+{
+<table width="100%" border="1">
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+
+    </tr>
+    <tr>
+        <td>@course.Id</td>
+        <td>@course.Title</td>
+    </tr>
+    <tr>
+        <td colspan="2">
+           
+            <table>
+                <tr>
+                    <td>
+                        Module
+                    </td>
+
+                </tr>
+                @foreach (var module in course.Modules)
+                {
+                    <tr> <td>@module.Title</td></tr>
+
+                    <tr>
+                        <td>
+                            Clip Name
+                        </td>
+                    </tr>
+                    foreach (var clips in module.Clips)
+                    {
+                        <tr>
+                            <td>
+                                @clips.Name
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+           
+        </td>
+    </tr>
+</table>
+}
