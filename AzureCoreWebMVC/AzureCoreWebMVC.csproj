@@ -3,12 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-AzureCoreWebMVC-F44225A8-43C4-4FB3-808E-1A73EDBC49C9</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/e7af0fd8-5871-49d1-b166-57d9ed55785a/resourcegroups/LearningResourceGroup01/providers/microsoft.insights/components/deepak-kotagiri</ApplicationInsightsResourceId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>

@@ -23,6 +23,11 @@ namespace AzureCoreWebMVC.Controllers
             return View("Index", model);
         }
 
+        public IActionResult Test()
+        {
+
+            throw new InvalidOperationException("Sorry, currently exception occured as expected by application owner. Please check application Insights.");
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
