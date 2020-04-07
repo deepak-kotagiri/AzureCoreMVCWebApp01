@@ -9,13 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AzureCoreWebMVC.Controllers
 {
+    [Route("[controller]/[action]")]
     public class ImagesController : Controller
     {
         private readonly ImageStore imageStore;
 
-        public ImagesController(ImageStore imageStore)
+        public ImagesController(ImageStore imageStore)//ImageStore imageStore
         {
-            this.imageStore = imageStore;
+            this.imageStore = imageStore;// new ImageStore();// imageStore;
         }
         // GET: Images
         public ActionResult Index()

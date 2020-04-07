@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using AzureCoreWebMVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using AzureCoreWebMVC.Services;
 
 namespace AzureCoreWebMVC
 {
@@ -39,6 +40,8 @@ namespace AzureCoreWebMVC
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddSingleton<CourseStore>();
+            services.AddSingleton<ImageStore>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

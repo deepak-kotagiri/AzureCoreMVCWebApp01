@@ -12,9 +12,9 @@ namespace AzureCoreWebMVC.Controllers
     public class CourseController : Controller
     {
         public CourseStore _coursedb;
-        public CourseController()
+        public CourseController(CourseStore coursedb)
         {
-            _coursedb = new CourseStore();
+            _coursedb = coursedb;// new CourseStore();
         }
         // GET: Course
         public ActionResult Index()
